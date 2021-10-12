@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:tools="http://schemas.android.com/tools">
+    <domain-config>
+        <domain includeSubdomains="true">i.picsum.photos</domain>
+        <pin-set tools:ignore="MissingBackupPin">
+            <pin digest="SHA-256">Y9mvm0exBk1JoQ57f9Vm28jKo5lFm/woKcVxrYxu80o=</pin>
+        </pin-set>
+    </domain-config>
+    <domain-config>
+        <domain includeSubdomains="true">65apps.com</domain>
+        <pin-set tools:ignore="MissingBackupPin">
+            <pin digest="SHA-256">C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M=</pin>
+        </pin-set>
+    </domain-config>
+    <debug-overrides cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>

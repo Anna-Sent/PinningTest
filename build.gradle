@@ -1,0 +1,25 @@
+buildscript {
+
+    ext {
+        compileSdk = 30
+        minSdk = 22
+        targetSdk = 30
+        versionCode = 1
+        versionName = '1.0'
+        applicationId = 'test.pinning'
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.3'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31'
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

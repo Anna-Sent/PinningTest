@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+
+    compileSdk project.properties.compileSdk
+
+    defaultConfig {
+        applicationId project.properties.applicationId
+        minSdk project.properties.minSdk
+        targetSdk project.properties.targetSdk
+        versionCode project.properties.versionCode
+        versionName project.properties.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(':core')
+}

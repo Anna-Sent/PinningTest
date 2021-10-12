@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:tools="http://schemas.android.com/tools">
+    <domain-config>
+        <trustkit-config enforcePinning="true">
+            <report-uri>http://report.datatheorem.com/log_report</report-uri>
+        </trustkit-config>
+        <domain includeSubdomains="true">i.picsum.photos</domain>
+        <pin-set tools:ignore="MissingBackupPin">
+            <pin digest="SHA-256">0000000000000000000000000000000000000000000</pin>
+            <pin digest="SHA-256">1111111111111111111111111111111111111111111</pin>
+        </pin-set>
+    </domain-config>
+    <domain-config>
+        <trustkit-config enforcePinning="true">
+            <report-uri>http://report.datatheorem.com/log_report</report-uri>
+        </trustkit-config>
+        <domain includeSubdomains="true">65apps.com</domain>
+        <pin-set tools:ignore="MissingBackupPin">
+            <pin digest="SHA-256">0000000000000000000000000000000000000000000</pin>
+            <pin digest="SHA-256">1111111111111111111111111111111111111111111</pin>
+        </pin-set>
+    </domain-config>
+    <debug-overrides cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>
