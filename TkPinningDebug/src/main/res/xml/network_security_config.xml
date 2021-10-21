@@ -5,7 +5,7 @@
             <report-uri>http://report.datatheorem.com/log_report</report-uri>
         </trustkit-config>
         <domain includeSubdomains="true">i.picsum.photos</domain>
-        <pin-set tools:ignore="MissingBackupPin">
+        <pin-set>
             <pin digest="SHA-256">Y9mvm0exBk1JoQ57f9Vm28jKo5lFm/woKcVxrYxu80o=</pin>
             <pin digest="SHA-256">0000000000000000000000000000000000000000000</pin>
         </pin-set>
@@ -15,7 +15,7 @@
             <report-uri>http://report.datatheorem.com/log_report</report-uri>
         </trustkit-config>
         <domain includeSubdomains="true">65apps.com</domain>
-        <pin-set tools:ignore="MissingBackupPin">
+        <pin-set>
             <pin digest="SHA-256">C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M=</pin>
             <pin digest="SHA-256">0000000000000000000000000000000000000000000</pin>
         </pin-set>
