@@ -1,9 +1,17 @@
 package test.pinning
 
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.datatheorem.android.trustkit.TrustKit
 import com.datatheorem.android.trustkit.pinning.OkHttp3Helper
+import com.datatheorem.android.trustkit.reporting.BackgroundReporter
+import com.datatheorem.android.trustkit.reporting.PinningFailureReport
 import okhttp3.OkHttpClient
 import javax.net.ssl.HttpsURLConnection
+
 
 class MainActivity : BaseActivity() {
 
@@ -15,6 +23,12 @@ class MainActivity : BaseActivity() {
     override fun init() {
         if (useTrustKit) {
             TrustKit.initializeWithNetworkSecurityConfiguration(this)
+            val receiver = PinningFailureReportBroadcastReceiver()
+            LocalBroadcastManager.getInstance(this)
+                .registerReceiver(
+                    receiver,
+                    IntentFilter(BackgroundReporter.REPORT_VALIDATION_EVENT)
+                )
         }
     }
 
@@ -39,4 +53,13 @@ class MainActivity : BaseActivity() {
         } else {
             this
         }
+
+    private inner class PinningFailureReportBroadcastReceiver : BroadcastReceiver() {
+
+        override fun onReceive(context: Context?, intent: Intent) {
+            val report =
+                intent.getSerializableExtra(BackgroundReporter.EXTRA_REPORT) as PinningFailureReport?
+            updateUi("REPORT = $report")
+        }
+    }
 }

@@ -197,7 +197,7 @@ open class BaseActivity : AppCompatActivity(R.layout.activity_main), CoroutineSc
     }
 
     @SuppressLint("SetTextI18n")
-    private fun updateUi(message: String) {
+    protected fun updateUi(message: String) {
         text.text = text.text.toString() + "\n\n" + message
     }
 }
